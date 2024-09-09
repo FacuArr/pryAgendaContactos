@@ -110,6 +110,74 @@ namespace pryAgendaContactos
 
         }
 
+        public void buscarContacto(string nombre, DataGridView dgvProducto)
+        {
+            try
+            {
+                conexion = new OleDbConnection(cadena);
+                comando = new OleDbCommand();
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = $"SELECT * FROM Contactos WHERE Nombre LIKE '%{nombre}%'";
+                DataTable tablaProductos = new DataTable();
+
+                adaptador = new OleDbDataAdapter(comando);
+                adaptador.Fill(tablaProductos);
+
+                dgvProducto.DataSource = tablaProductos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void buscarContactoTel(string telefono, DataGridView dgvProducto)
+        {
+            try
+            {
+                conexion = new OleDbConnection(cadena);
+                comando = new OleDbCommand();
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = $"SELECT * FROM Contactos WHERE Telefono LIKE '%{telefono}%'";
+                DataTable tablaProductos = new DataTable();
+
+                adaptador = new OleDbDataAdapter(comando);
+                adaptador.Fill(tablaProductos);
+
+                dgvProducto.DataSource = tablaProductos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void buscarContactoCorreo(string correo, DataGridView dgvProducto)
+        {
+            try
+            {
+                conexion = new OleDbConnection(cadena);
+                comando = new OleDbCommand();
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = $"SELECT * FROM Contactos WHERE Correo LIKE '%{correo}%'";
+                DataTable tablaProductos = new DataTable();
+
+                adaptador = new OleDbDataAdapter(comando);
+                adaptador.Fill(tablaProductos);
+
+                dgvProducto.DataSource = tablaProductos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
     }
 }
