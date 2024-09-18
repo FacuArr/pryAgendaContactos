@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.agregarEliminarModificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.busquedadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contactosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,10 +39,11 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarEliminarModificarToolStripMenuItem,
-            this.busquedadToolStripMenuItem});
+            this.busquedadToolStripMenuItem,
+            this.contactosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(630, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -55,15 +57,22 @@
             // busquedadToolStripMenuItem
             // 
             this.busquedadToolStripMenuItem.Name = "busquedadToolStripMenuItem";
-            this.busquedadToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.busquedadToolStripMenuItem.Text = "Busquedad...";
+            this.busquedadToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.busquedadToolStripMenuItem.Text = "Búsqueda...";
             this.busquedadToolStripMenuItem.Click += new System.EventHandler(this.busquedadToolStripMenuItem_Click);
+            // 
+            // contactosToolStripMenuItem
+            // 
+            this.contactosToolStripMenuItem.Name = "contactosToolStripMenuItem";
+            this.contactosToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.contactosToolStripMenuItem.Text = "Contactos...";
+            this.contactosToolStripMenuItem.Click += new System.EventHandler(this.contactosToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(630, 412);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
@@ -79,6 +88,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem agregarEliminarModificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem busquedadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contactosToolStripMenuItem;
     }
 }
 

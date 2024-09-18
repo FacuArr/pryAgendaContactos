@@ -129,7 +129,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(177, 294);
+            this.btnEliminar.Location = new System.Drawing.Point(177, 307);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(82, 50);
             this.btnEliminar.TabIndex = 15;
@@ -138,7 +138,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(15, 294);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 307);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 50);
             this.btnAgregar.TabIndex = 14;
@@ -147,7 +147,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(96, 294);
+            this.btnLimpiar.Location = new System.Drawing.Point(96, 307);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 50);
             this.btnLimpiar.TabIndex = 13;

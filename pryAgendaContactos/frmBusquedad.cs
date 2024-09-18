@@ -22,5 +22,12 @@ namespace pryAgendaContactos
             String Nombre = txtNombre.Text;
             ObjConexion.buscarContacto(Nombre, dgvRegistro);
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

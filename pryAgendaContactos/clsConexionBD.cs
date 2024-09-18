@@ -20,7 +20,7 @@ namespace pryAgendaContactos
 
         public clsConexionBD()
         {
-            cadena = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:./BDContactos.accdb;";
+            cadena = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:../../BD/BDContactos.accdb;";
         }
 
         public void Listar(DataGridView dgvUsuarios)
@@ -179,6 +179,63 @@ namespace pryAgendaContactos
             }
         }
 
+        public void Recorrer(TreeNodeCollection nodos)
+        {
+            try
+            {
+                conexion = new OleDbConnection(cadena);
+                comando = new OleDbCommand();
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = "SELECT * FROM Contactos";
+                DataTable dataTable = new DataTable();
+
+                adaptador = new OleDbDataAdapter(comando);
+                adaptador.Fill(dataTable);
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    string categoria = row["Categoria"].ToString();
+                    string nombre = row["Nombre"].ToString();
+                    foreach (TreeNode nodo in nodos)
+                    {
+                        if (nodo.Text == categoria)
+                        {
+                            nodo.Nodes.Add(nombre);  
+                        }             
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void Recorrer(string nombre, ListBox lstDatos)
+        {
+            try
+            {
+                conexion = new OleDbConnection(cadena);
+                comando = new OleDbCommand();
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = $"SELECT * FROM Contactos WHERE Nombre={nombre}";
+                DataTable tablaContactos = new DataTable();
+
+                adaptador = new OleDbDataAdapter(comando);
+                adaptador.Fill(tablaContactos);
+
+              
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
 

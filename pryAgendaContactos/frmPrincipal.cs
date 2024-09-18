@@ -27,5 +27,11 @@ namespace pryAgendaContactos
             frmBusquedad frmBusquedad = new frmBusquedad();
             frmBusquedad.ShowDialog();
         }
+
+        private void contactosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmContactos frmContactos = new frmContactos();
+            frmContactos.ShowDialog();
+        }
     }
 }
