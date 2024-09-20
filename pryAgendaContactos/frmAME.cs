@@ -18,9 +18,35 @@ namespace pryAgendaContactos
         }
         clsConexionBD ObjConexion = new clsConexionBD();
         clsContactos Contacto = new clsContactos();
-       
+        
 
-        private void dgvContactos_SelectionChanged(object sender, EventArgs e)
+        public void LlenarCombo()
+        {
+            cmbCategoria.Items.Clear();
+            cmbCategoria.Items.Add("Amigos");
+            cmbCategoria.Items.Add("Familia");
+            cmbCategoria.Items.Add("Trabajo");
+        }
+
+        public void Limpiar()
+        {
+            txtID.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtTelefono.Text = "";
+            txtCorreo.Text = "";
+            cmbCategoria.Text = "";
+            dgvContactos.ClearSelection();
+        }
+        private void frmAME_Load(object sender, EventArgs e)
+        {
+            ObjConexion.Listar(dgvContactos);
+            LlenarCombo();
+            dgvContactos.ClearSelection();
+            Limpiar();
+        }
+
+        private void dgvContactos_SelectionChanged_1(object sender, EventArgs e)
         {
             txtID.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["ID"].Value); ;
             txtNombre.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Nombre"].Value);
@@ -28,11 +54,9 @@ namespace pryAgendaContactos
             txtTelefono.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Telefono"].Value);
             txtCorreo.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Correo"].Value);
             cmbCategoria.SelectedItem = Convert.ToString(dgvContactos.CurrentRow.Cells["Categoria"].Value);
-
-
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             Contacto.Nombre = txtNombre.Text;
             Contacto.Apellido = txtApellido.Text;
@@ -59,42 +83,16 @@ namespace pryAgendaContactos
             Limpiar();
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             Limpiar();
         }
-        public void LlenarCombo()
-        {
-            cmbCategoria.Items.Clear();
-            cmbCategoria.Items.Add("Amigos");
-            cmbCategoria.Items.Add("Familia");
-            cmbCategoria.Items.Add("Trabajo");
-        }
 
-        public void Limpiar()
-        {
-            txtID.Text = "";
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtTelefono.Text = "";
-            txtCorreo.Text = "";
-            cmbCategoria.Text = "";
-            dgvContactos.ClearSelection();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dgvContactos.CurrentRow.Cells["ID"].Value);
             ObjConexion.eliminarProducto(id);
             ObjConexion.Listar(dgvContactos);
-        }
-
-        private void frmAME_Load(object sender, EventArgs e)
-        {
-            ObjConexion.Listar(dgvContactos);
-            LlenarCombo();
-            dgvContactos.ClearSelection();
-            Limpiar();
         }
     }
 }

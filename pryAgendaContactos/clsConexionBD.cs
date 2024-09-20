@@ -226,10 +226,7 @@ namespace pryAgendaContactos
                 DataTable tablaContactos = new DataTable();
 
                 adaptador = new OleDbDataAdapter(comando);
-                adaptador.Fill(tablaContactos);
-
-              
-                
+                adaptador.Fill(tablaContactos);     
             }
             catch (Exception ex)
             {

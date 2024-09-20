@@ -35,9 +35,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvRegistro = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
@@ -67,6 +67,7 @@
             this.optNombre.TabStop = true;
             this.optNombre.Text = "Nombre";
             this.optNombre.UseVisualStyleBackColor = true;
+            this.optNombre.CheckedChanged += new System.EventHandler(this.optNombre_CheckedChanged_1);
             // 
             // optCorreo
             // 
@@ -78,6 +79,7 @@
             this.optCorreo.TabStop = true;
             this.optCorreo.Text = "Correo";
             this.optCorreo.UseVisualStyleBackColor = true;
+            this.optCorreo.CheckedChanged += new System.EventHandler(this.optCorreo_CheckedChanged);
             // 
             // optTelefono
             // 
@@ -89,14 +91,15 @@
             this.optTelefono.TabStop = true;
             this.optTelefono.Text = "Teléfono";
             this.optTelefono.UseVisualStyleBackColor = true;
+            this.optTelefono.CheckedChanged += new System.EventHandler(this.optTelefono_CheckedChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtCategoria);
+            this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCodigo);
+            this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(200, 12);
             this.groupBox1.Name = "groupBox1";
@@ -104,7 +107,6 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtNombre
             // 
@@ -124,13 +126,14 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Correo";
             // 
-            // txtCategoria
+            // txtCorreo
             // 
-            this.txtCategoria.Enabled = false;
-            this.txtCategoria.Location = new System.Drawing.Point(56, 111);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(192, 20);
-            this.txtCategoria.TabIndex = 7;
+            this.txtCorreo.Enabled = false;
+            this.txtCorreo.Location = new System.Drawing.Point(56, 111);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(192, 20);
+            this.txtCorreo.TabIndex = 7;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // label2
             // 
@@ -141,13 +144,14 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Teléfono";
             // 
-            // txtCodigo
+            // txtTelefono
             // 
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(56, 70);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(192, 20);
-            this.txtCodigo.TabIndex = 8;
+            this.txtTelefono.Enabled = false;
+            this.txtTelefono.Location = new System.Drawing.Point(56, 70);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(192, 20);
+            this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // label1
             // 
@@ -195,9 +199,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvRegistro;
     }

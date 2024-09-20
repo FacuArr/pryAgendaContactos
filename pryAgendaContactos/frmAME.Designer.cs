@@ -56,6 +56,7 @@
             this.dgvContactos.Name = "dgvContactos";
             this.dgvContactos.Size = new System.Drawing.Size(505, 386);
             this.dgvContactos.TabIndex = 12;
+            this.dgvContactos.SelectionChanged += new System.EventHandler(this.dgvContactos_SelectionChanged_1);
             // 
             // groupBox1
             // 
@@ -135,6 +136,7 @@
             this.btnEliminar.TabIndex = 15;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnAgregar
             // 
@@ -144,6 +146,7 @@
             this.btnAgregar.TabIndex = 14;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // btnLimpiar
             // 
@@ -153,6 +156,7 @@
             this.btnLimpiar.TabIndex = 13;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
             // 
             // txtTelefono
             // 
