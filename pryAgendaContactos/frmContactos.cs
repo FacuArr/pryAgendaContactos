@@ -27,8 +27,8 @@ namespace pryAgendaContactos
         {
             TreeNode nodoSeleccionado = e.Node;
             string nombre = nodoSeleccionado.Text;  
+            lstDatos.Items.Clear();
             ObjConexion.Recorrer(nombre, lstDatos); 
-
         }
     }
 }

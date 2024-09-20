@@ -54,7 +54,7 @@
             this.dgvContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContactos.Location = new System.Drawing.Point(283, 37);
             this.dgvContactos.Name = "dgvContactos";
-            this.dgvContactos.Size = new System.Drawing.Size(505, 386);
+            this.dgvContactos.Size = new System.Drawing.Size(492, 386);
             this.dgvContactos.TabIndex = 12;
             this.dgvContactos.SelectionChanged += new System.EventHandler(this.dgvContactos_SelectionChanged_1);
             // 

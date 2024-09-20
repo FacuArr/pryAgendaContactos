@@ -230,7 +230,11 @@ namespace pryAgendaContactos
 
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    lstDatos.Items.Add(row["Categoria"].ToString() + row["Nombre"].ToString());
+                    lstDatos.Items.Add("Nombre: " + row["Nombre"].ToString());
+                    lstDatos.Items.Add("Apellido: " + row["Apellido"].ToString());
+                    lstDatos.Items.Add("Telefeno: " + row["Telefono"].ToString());
+                    lstDatos.Items.Add("Correo: " + row["Correo"].ToString());
+                    lstDatos.Items.Add("Categoria: " + row["Categoria"].ToString());
                 }
 
 

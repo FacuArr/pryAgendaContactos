@@ -33,5 +33,31 @@ namespace pryAgendaContactos
             frmContactos frmContactos = new frmContactos();
             frmContactos.ShowDialog();
         }
+
+        private void AbrirFormulario<Miform>() where Miform : Form, new()
+        {
+            Form formulario;
+            formulario = panelForms.Controls.OfType<Miform>().FirstOrDefault();
+
+            if (formulario == null) {
+                formulario = new Miform();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None; 
+                formulario.Dock = DockStyle.Fill;
+                panelForms.Controls.Add(formulario);
+                panelForms.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+            }
+            else
+            {
+                formulario.BringToFront();
+            }
+        }
+
+        private void btnAEM_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmAME>();
+        }
     }
 }
