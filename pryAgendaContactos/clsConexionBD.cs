@@ -222,11 +222,18 @@ namespace pryAgendaContactos
                 conexion.Open();
                 comando.Connection = conexion;
                 comando.CommandType = CommandType.Text;
-                comando.CommandText = $"SELECT * FROM Contactos WHERE Nombre={nombre}";
-                DataTable tablaContactos = new DataTable();
+                comando.CommandText = $"SELECT * FROM Contactos WHERE Nombre LIKE '%{nombre}%'";
+                DataTable dataTable = new DataTable();
 
                 adaptador = new OleDbDataAdapter(comando);
-                adaptador.Fill(tablaContactos);     
+                adaptador.Fill(dataTable);
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    lstDatos.Items.Add(row["Categoria"].ToString() + row["Nombre"].ToString());
+                }
+
+
             }
             catch (Exception ex)
             {

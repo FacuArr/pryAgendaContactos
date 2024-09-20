@@ -20,6 +20,7 @@ namespace pryAgendaContactos
         private void frmContactos_Load(object sender, EventArgs e)
         {
             ObjConexion.Recorrer(trvAgenda.Nodes);
+            trvAgenda.ExpandAll();
         }
 
         private void trvAgenda_AfterSelect(object sender, TreeViewEventArgs e)
