@@ -57,5 +57,7 @@ namespace pryAgendaContactos
             string correo = txtCorreo.Text;
             ObjConexion.buscarContactoCorreo(correo, dgvRegistro);
         }
+
+       
     }
 }

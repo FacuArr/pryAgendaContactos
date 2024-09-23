@@ -103,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -121,6 +122,19 @@
     <Content Include="BD\BDContactos.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\storage_data_download_up_upload_icon_262052.png" />
+    <None Include="Resources\user_users_teamwork_person_business_connection_communication_group_icon_262125 %281%29.png" />
+    <None Include="Resources\2849829-interface-magnifier-magnifying-multimedia-search-zoom_107980.png" />
+    <None Include="Resources\catalog_change_icon_215704 %281%29.png" />
+    <None Include="Resources\contact_icon_153799.png" />
+    <None Include="Resources\calandar_icon_153789.png" />
+    <None Include="Resources\calandar_icon_262043.png" />
+    <None Include="Resources\catalog_change_icon_215704.png" />
+    <None Include="Resources\user_users_teamwork_person_business_connection_communication_group_icon_262125.png" />
+    <None Include="Resources\align_up_arrow_icon_263572.png" />
+    <None Include="Resources\envelope_email_message_icon_262695.png" />
+    <None Include="Resources\planning_strategy_magnifying_glass_icon_262701.png" />
+    <None Include="Resources\Google_Contacts_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

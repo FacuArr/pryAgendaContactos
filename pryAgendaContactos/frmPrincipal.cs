@@ -16,24 +16,7 @@ namespace pryAgendaContactos
         {
             InitializeComponent();
         }
-        private void agregarEliminarModificarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAME frm = new frmAME(); 
-            frm.ShowDialog();
-        }
-
-        private void busquedadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmBusquedad frmBusquedad = new frmBusquedad();
-            frmBusquedad.ShowDialog();
-        }
-
-        private void contactosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmContactos frmContactos = new frmContactos();
-            frmContactos.ShowDialog();
-        }
-
+       
         private void AbrirFormulario<Miform>() where Miform : Form, new()
         {
             Form formulario;
@@ -58,6 +41,16 @@ namespace pryAgendaContactos
         private void btnAEM_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmAME>();
+        }
+
+        private void btnBusqueda_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmBusquedad>();
+        }
+
+        private void btnContactos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmContactos>();
         }
     }
 }
