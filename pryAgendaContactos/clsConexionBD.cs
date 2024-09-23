@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace pryAgendaContactos
 {
@@ -243,7 +244,45 @@ namespace pryAgendaContactos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }     
+        }
+        public void Exportar()
+        {
+            try
+            {
+                conexion = new OleDbConnection(cadena);
+                comando = new OleDbCommand();
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = "SELECT * FROM Contactos";
+                DataTable dataTable = new DataTable();
+
+                adaptador = new OleDbDataAdapter(comando);
+                adaptador.Fill(dataTable);
+                StreamWriter AdContactos = new StreamWriter("Contactos.csv", false, Encoding.UTF8);
+                AdContactos.WriteLine("Listado Contactos\n");
+                AdContactos.WriteLine("Nombre;Apellido;Telefono;Correo;Categoria");
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    AdContactos.Write(row["Nombre"]);
+                    AdContactos.Write(";");
+                    AdContactos.Write(row["Apellido"]);
+                    AdContactos.Write(";");
+                    AdContactos.Write(row["Telefono"]);
+                    AdContactos.Write(";");
+                    AdContactos.Write(row["Correo"]);
+                    AdContactos.Write(";");
+                    AdContactos.WriteLine(row["Categoria"]);
+                }
+                AdContactos.Close();
+                MessageBox.Show("El archivo ha sido generado en formato .csv");
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

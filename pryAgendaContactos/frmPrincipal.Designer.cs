@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnContactos = new System.Windows.Forms.Button();
             this.btnAEM = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelForms = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelForms = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -63,6 +63,38 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(217, 408);
             this.panel1.TabIndex = 12;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel6.Location = new System.Drawing.Point(0, 342);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(6, 65);
+            this.panel6.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel4.Location = new System.Drawing.Point(0, 274);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(6, 69);
+            this.panel4.TabIndex = 6;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel5.Location = new System.Drawing.Point(0, 211);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(6, 67);
+            this.panel5.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel3.Location = new System.Drawing.Point(0, 151);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(6, 63);
+            this.panel3.TabIndex = 5;
             // 
             // btnBusqueda
             // 
@@ -98,6 +130,7 @@
             this.btnExportar.Text = "Exportar contactos";
             this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnContactos
             // 
@@ -145,15 +178,6 @@
             this.panel2.Size = new System.Drawing.Size(217, 148);
             this.panel2.TabIndex = 0;
             // 
-            // panelForms
-            // 
-            this.panelForms.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panelForms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelForms.Location = new System.Drawing.Point(217, 0);
-            this.panelForms.Name = "panelForms";
-            this.panelForms.Size = new System.Drawing.Size(660, 408);
-            this.panelForms.TabIndex = 13;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::pryAgendaContactos.Properties.Resources.contact_icon_153799;
@@ -164,37 +188,14 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // panel3
+            // panelForms
             // 
-            this.panel3.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel3.Location = new System.Drawing.Point(0, 151);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(6, 63);
-            this.panel3.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel4.Location = new System.Drawing.Point(0, 274);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(6, 69);
-            this.panel4.TabIndex = 6;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel5.Location = new System.Drawing.Point(0, 211);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(6, 67);
-            this.panel5.TabIndex = 6;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel6.Location = new System.Drawing.Point(0, 342);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(6, 65);
-            this.panel6.TabIndex = 7;
+            this.panelForms.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panelForms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelForms.Location = new System.Drawing.Point(217, 0);
+            this.panelForms.Name = "panelForms";
+            this.panelForms.Size = new System.Drawing.Size(660, 408);
+            this.panelForms.TabIndex = 13;
             // 
             // frmPrincipal
             // 
@@ -209,6 +210,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda de contactos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrincipal_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

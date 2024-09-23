@@ -16,6 +16,7 @@ namespace pryAgendaContactos
         {
             InitializeComponent();
         }
+        clsConexionBD ObjConexion = new clsConexionBD();
        
         private void AbrirFormulario<Miform>() where Miform : Form, new()
         {
@@ -51,6 +52,16 @@ namespace pryAgendaContactos
         private void btnContactos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmContactos>();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            ObjConexion.Exportar();
+        }
+
+        private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
