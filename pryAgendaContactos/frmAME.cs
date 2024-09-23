@@ -42,18 +42,20 @@ namespace pryAgendaContactos
         {
             ObjConexion.Listar(dgvContactos);
             LlenarCombo();
-            dgvContactos.ClearSelection();
             Limpiar();
         }
 
         private void dgvContactos_SelectionChanged_1(object sender, EventArgs e)
         {
-            txtID.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["ID"].Value); ;
-            txtNombre.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Nombre"].Value);
-            txtApellido.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Apellido"].Value);
-            txtTelefono.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Telefono"].Value);
-            txtCorreo.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Correo"].Value);
-            cmbCategoria.SelectedItem = Convert.ToString(dgvContactos.CurrentRow.Cells["Categoria"].Value);
+            if (dgvContactos.CurrentRow != null)
+            { 
+                txtID.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["ID"].Value); ;
+                txtNombre.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Nombre"].Value);
+                txtApellido.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Apellido"].Value);
+                txtTelefono.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Telefono"].Value);
+                txtCorreo.Text = Convert.ToString(dgvContactos.CurrentRow.Cells["Correo"].Value);
+                cmbCategoria.SelectedItem = Convert.ToString(dgvContactos.CurrentRow.Cells["Categoria"].Value);
+            }
         }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
