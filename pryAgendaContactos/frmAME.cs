@@ -30,13 +30,13 @@ namespace pryAgendaContactos
 
         public void Limpiar()
         {
+            dgvContactos.ClearSelection();
             txtID.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtTelefono.Text = "";
             txtCorreo.Text = "";
             cmbCategoria.Text = "";
-            dgvContactos.ClearSelection();
         }
         private void frmAME_Load(object sender, EventArgs e)
         {
@@ -60,29 +60,44 @@ namespace pryAgendaContactos
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            Contacto.Nombre = txtNombre.Text;
-            Contacto.Apellido = txtApellido.Text;
-            Contacto.Telefono = txtTelefono.Text;
-            Contacto.Correo = txtCorreo.Text;
-            Contacto.Categoria = cmbCategoria.Text;
-
-            if (dgvContactos.SelectedRows.Count == 1)
+            if (txtNombre.Text != "" & txtApellido.Text != "" & txtTelefono.Text != "" & txtCorreo.Text != "" & cmbCategoria.Text != "")
             {
-                int id = Convert.ToInt32(txtID.Text);
-                if (id != null)
+                Contacto.Nombre = txtNombre.Text;
+                Contacto.Apellido = txtApellido.Text;
+                Contacto.Telefono = txtTelefono.Text;
+                Contacto.Correo = txtCorreo.Text;
+                Contacto.Categoria = cmbCategoria.Text;
+
+                if (dgvContactos.SelectedRows.Count == 1)
                 {
-                    Contacto.ID = id;
-                    ObjConexion.actualizarProducto(Contacto);
-                    ObjConexion.Listar(dgvContactos);
+                    int id = Convert.ToInt32(txtID.Text);
+                    if (id != null)
+                    {
+                        DialogResult l = MessageBox.Show("¿Seguro que desea modificar el contacto seleccionado?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (l == DialogResult.Yes)
+                        {
+                            Contacto.ID = id;
+                            ObjConexion.actualizarProducto(Contacto);
+                            ObjConexion.Listar(dgvContactos);
+                        }
+                    }
                 }
+                else
+                {
+                    DialogResult l = MessageBox.Show("¿Seguro que desea agregar este contacto?", "Agregar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (l == DialogResult.Yes)
+                    {
+                        ObjConexion.insertarProducto(Contacto);
+                        ObjConexion.Listar(dgvContactos);
+                    }
+                }
+                dgvContactos.ClearSelection();
+                Limpiar();
             }
             else
             {
-                ObjConexion.insertarProducto(Contacto);
-                ObjConexion.Listar(dgvContactos);
+                MessageBox.Show("Algun campo no está lleno, verifique porfavor", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
             }
-            dgvContactos.ClearSelection();
-            Limpiar();
         }
 
         private void btnLimpiar_Click_1(object sender, EventArgs e)
@@ -92,9 +107,16 @@ namespace pryAgendaContactos
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvContactos.CurrentRow.Cells["ID"].Value);
-            ObjConexion.eliminarProducto(id);
-            ObjConexion.Listar(dgvContactos);
+            if (dgvContactos.SelectedRows.Count == 1)
+            {
+                DialogResult l = MessageBox.Show("¿Seguro que desea eliminar el contacto seleccionado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (l == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(dgvContactos.CurrentRow.Cells["ID"].Value);
+                    ObjConexion.eliminarProducto(id);
+                    ObjConexion.Listar(dgvContactos);
+                }
+            }
         }
     }
 }

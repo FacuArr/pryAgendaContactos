@@ -276,7 +276,7 @@ namespace pryAgendaContactos
                     AdContactos.WriteLine(row["Categoria"]);
                 }
                 AdContactos.Close();
-                MessageBox.Show("El archivo ha sido generado en formato .csv");
+                MessageBox.Show("El archivo ha sido generado en formato .csv en BIN/DEBUG");
             }
             catch (Exception ex)
             {
